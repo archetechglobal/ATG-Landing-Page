@@ -36,10 +36,25 @@ export const Navbar = () => {
                     <SheetTrigger asChild>
                         <Button variant={"outline"} size={"icon"}>
                             <Menu className="h-5 w-5"></Menu>
+                            <span className="sr-only">Toggle Menu</span>
                         </Button>
                     </SheetTrigger>
                     <SheetContent side="right">
-                        
+                        <nav className="flex flex-col gap-4 mt-8">
+                            <Link href="#services" className="text-lg font-medium hover:text-accent transition-colors">
+                            Services
+                            </Link>
+                            <Link href="#about" className="text-lg font-medium hover:text-accent transition-colors">
+                            About
+                            </Link>
+                            <Link href="#work" className="text-lg font-medium hover:text-accent transition-colors">
+                            Work
+                            </Link>
+                            <Link href="#contact" className="text-lg font-medium hover:text-accent transition-colors">
+                            Contact
+                            </Link>
+                            <Button className="mt-4">Get Started</Button>
+                        </nav>
                     </SheetContent>
                 </Sheet>
             </div>
