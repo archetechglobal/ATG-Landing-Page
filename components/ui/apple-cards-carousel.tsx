@@ -1,5 +1,5 @@
 "use client"
-import React, { useEffect, useRef, useState, createContext, useContext } from "react"
+import React, { useEffect, useRef, useState, createContext, useContext, useCallback } from "react"
 import { IconArrowNarrowLeft, IconArrowNarrowRight, IconX } from "@tabler/icons-react"
 import { cn } from "@/lib/utils"
 import { AnimatePresence, motion } from "framer-motion" // Corrected import
@@ -146,8 +146,13 @@ export const Card = ({
   layout?: boolean
 }) => {
   const [open, setOpen] = useState(false)
-  const containerRef = useRef<HTMLDivElement>(null)
-  const { onCardClose, currentIndex } = useContext(CarouselContext)
+  const containerRef = useRef<HTMLDivElement>(null!)
+  const { onCardClose } = useContext(CarouselContext)
+
+  const handleClose = useCallback(() => {
+    setOpen(false)
+    onCardClose(index)
+  }, [index, onCardClose])
 
   useEffect(() => {
     function onKeyDown(event: KeyboardEvent) {
@@ -164,17 +169,12 @@ export const Card = ({
 
     window.addEventListener("keydown", onKeyDown)
     return () => window.removeEventListener("keydown", onKeyDown)
-  }, [open])
+  }, [open, handleClose])
 
   useOutsideClick(containerRef, () => handleClose())
 
   const handleOpen = () => {
     setOpen(true)
-  }
-
-  const handleClose = () => {
-    setOpen(false)
-    onCardClose(index)
   }
 
   return (
@@ -248,7 +248,7 @@ export const Card = ({
 export const BlurImage = ({ height, width, src, className, alt, fill, ...rest }: ImageProps & { fill?: boolean }) => {
   const [isLoading, setLoading] = useState(true)
 
-  const { fill: _, ...imgProps } = rest
+  const { fill: fillProp, ...imgProps } = rest
 
   return (
     <img
