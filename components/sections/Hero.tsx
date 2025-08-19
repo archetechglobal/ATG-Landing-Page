@@ -7,20 +7,20 @@ import { Spotlight } from '../ui/spotlight'
 export const Hero = () => {
     return (
       <section className='w-full py-12 md:py-24 lg:py-32 xl:py-48'>
-        <Spotlight fill='blue' className="-top-40 left-0 md:-top-20 md:left-0"/>
+        <Spotlight fill='blue' className="-top-40 -left-30 md:-top-20 md:left-0"/>
         <div className='container px-4 md:px-6'>
             <div className='grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]'>
                 <div className='flex flex-col justify-center space-y-4'>
                     <div className="space-y-2">
                     <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
-                        <span className='gradient-text'>ArcheTeching</span> the Future with <span className="">Tech</span>
+                        <span className='bg-clip-text text-transparent bg-gradient-to-r from-white to-purple-600'>ArcheTeching</span> the Future with <span className="">Tech</span>
                     </h1>
                     <p className="max-w-[600px] text-muted-foreground md:text-xl">
                         We help startups and enterprises unlock growth with AI-first, end-to-end software development — strategy, design, development, and cloud infrastructure, all in one place.
                     </p>
                     </div>
                     <div className="flex flex-col gap-2 min-[400px]:flex-row">
-                        <Button size="lg" className="bg-white hover:bg-accent/90">
+                        <Button size="lg" className="bg-white hover:bg-white/70 hover:cursor-pointer">
                             Get Started
                             <ArrowRight className="ml-2 h-4 w-4" />
                         </Button>
@@ -32,7 +32,7 @@ export const Hero = () => {
                 </div>
                  <div className="hidden lg:block">
                 <div className="relative h-full w-full">
-                  <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-lg blur-3xl" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-600/40 to-blue-600/40 rounded-lg blur-3xl" />
                   <div className="relative h-full w-full rounded-lg border bg-card p-8 shadow-lg gradient-border">
                     <div className="space-y-4">
                       <div className="flex items-center space-x-2">

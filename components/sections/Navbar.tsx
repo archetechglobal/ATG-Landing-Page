@@ -15,16 +15,16 @@ export const Navbar = () => {
                 </Link>  
             </div>
             <nav className="hidden md:flex items-center gap-6">
-                <Link href={'#services'} className="text-sm font-medium hover:text-accent transition-colors">
+                <Link href={'#services'} className="text-sm font-medium hover:text-purple-400 transition-colors">
                     Services
                 </Link>
-                <Link href={'#About'} className="text-sm font-medium hover:text-accent transition-colors">
+                <Link href={'#About'} className="text-sm font-medium hover:text-purple-400 transition-colors">
                     About
                 </Link>
-                <Link href={'#Work'} className="text-sm font-medium hover:text-accent transition-colors">
+                <Link href={'#Work'} className="text-sm font-medium hover:text-purple-400 transition-colors">
                     Work
                 </Link>
-                <Link href={'#Contact'} className="text-sm font-medium hover:text-accent transition-colors">
+                <Link href={'#Contact'} className="text-sm font-medium hover:text-purple-400 transition-colors">
                     Contact
                 </Link>
                 {/* <ModeToggle/> */}
@@ -40,7 +40,7 @@ export const Navbar = () => {
                         </Button>
                     </SheetTrigger>
                     <SheetContent side="right">
-                        <nav className="flex flex-col gap-4 mt-8">
+                        <nav className="flex flex-col px-4 gap-4 mt-8">
                             <Link href="#services" className="text-lg font-medium hover:text-accent transition-colors">
                             Services
                             </Link>
@@ -53,7 +53,7 @@ export const Navbar = () => {
                             <Link href="#contact" className="text-lg font-medium hover:text-accent transition-colors">
                             Contact
                             </Link>
-                            <Button className="mt-4">Get Started</Button>
+                            <Button className="mt-4 hover:bg-white/70 hover:cursor-pointer">Get Started</Button>
                         </nav>
                     </SheetContent>
                 </Sheet>
