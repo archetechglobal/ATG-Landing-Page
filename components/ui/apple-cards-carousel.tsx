@@ -248,8 +248,6 @@ export const Card = ({
 export const BlurImage = ({ height, width, src, className, alt, fill, ...rest }: ImageProps & { fill?: boolean }) => {
   const [isLoading, setLoading] = useState(true)
 
-  const { fill: fillProp, ...imgProps } = rest
-
   return (
     <img
       className={cn(
@@ -266,7 +264,7 @@ export const BlurImage = ({ height, width, src, className, alt, fill, ...rest }:
       decoding="async"
       blurDataURL={typeof src === "string" ? src : undefined}
       alt={alt ? alt : "Background of a beautiful view"}
-      {...imgProps}
+      {...rest}
     />
   )
 }
